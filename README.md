@@ -1,4 +1,3 @@
-Here’s an enhanced and well-structured README file for your **OFBiz Assignment**:
 
 ---
 

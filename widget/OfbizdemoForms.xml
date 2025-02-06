@@ -18,12 +18,14 @@ specific language governing permissions and limitations
 under the License.
 -->
 
+
 <forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xmlns="http://ofbiz.apache.org/Widget-Form" xsi:schemaLocation="http://ofbiz.apache.org/Widget-Form http://ofbiz.apache.org/dtds/widget-form.xsd">
+
+    <!--form that lets you add records to OfbizDemo through request-map-->
     <form name="AddOfbizDemo" type="single" target="createOfbizDemo">
         <!-- We have this utility in OFBiz to render form based on service definition.
-             Service attributes will automatically lookedup and will be shown on form
-        -->
+             Service attributes will automatically lookedup and will be shown on form-->
         <auto-fields-service service-name="createOfbizDemo"/>
         <field name="ofbizDemoTypeId" title="${uiLabelMap.CommonType}">
             <drop-down allow-empty="false" current-description="">
@@ -36,6 +38,7 @@ under the License.
         <field name="submitButton" title="${uiLabelMap.CommonAdd}"><submit button-type="button"/></field>
     </form>
 
+    <!--form to find records in OfbizDemo by the parameters given below -->
     <form name="FindOfbizDemo" type="single" target="FindOfbizDemo" default-entity-name="OfbizDemo">
         <field name="noConditionFind"><hidden value="Y"/> <!-- if this isn't there then with all fields empty no query will be done --></field>
         <field name="ofbizDemoId" title="${uiLabelMap.OfbizDemoId}"><text-find/></field>
@@ -51,6 +54,7 @@ under the License.
         <field name="searchButton" title="${uiLabelMap.CommonFind}" widget-style="smallSubmit"><submit button-type="button" image-location="/images/icons/magnifier.png"/></field>
     </form>
 
+    <!--the form to get a list of records-->
     <form name="ListOfbizDemo" type="list" list-name="listIt" paginate-target="FindOfbizDemo" default-entity-name="OfbizDemo" separate-columns="true"
           odd-row-style="alternate-row" header-row-style="header-row-2" default-table-style="basic-table hover-bar">
     <actions>
